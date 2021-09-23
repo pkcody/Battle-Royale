@@ -25,6 +25,10 @@ public class Bullet : MonoBehaviour
         {
             PlayerController player = GameManager.instance.GetPlayer(other.gameObject);
 
+            if (player.id != attackerId)
+                player.photonView.RPC("TakeDamage", player.photonPlayer, attackerId, damage);
         }
+
+        Destroy(gameObject);
     }
 }
