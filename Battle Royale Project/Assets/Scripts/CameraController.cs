@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public Vector3 camOffset = new Vector3(0f, 1.2f, -2.6f);
+    public Vector3 camOffsetTwo = new Vector3(0f, 1f, .5f);
+
     [Header("Look Sensitivity")]
     public float sensX;
     public float sensY;
@@ -18,12 +21,16 @@ public class CameraController : MonoBehaviour
     private float rotX;
     private float rotY;
 
+    private Transform target;
+    private int camMode;
+
     private bool isSpectator = false;
 
     void Start()
     {
         // lock the cursor to the middle of the screen
         Cursor.lockState = CursorLockMode.Locked;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void LateUpdate()
@@ -34,6 +41,28 @@ public class CameraController : MonoBehaviour
 
         //clamp the vertical rotation
         rotY = Mathf.Clamp(rotY, minY, maxY);
+
+        // first or third perspective
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (camMode == 1)
+            {
+                camMode = 0;
+            }
+            else
+            {
+                camMode += 1;
+            }
+        }
+        if (camMode == 0)
+        {
+            this.transform.position = target.TransformPoint(camOffset);
+            this.transform.LookAt(target);
+        }
+        if (camMode == 1)
+        {
+            this.transform.position = target.TransformPoint(camOffsetTwo);
+        }
 
         // are we spectating?
         if (isSpectator)

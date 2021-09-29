@@ -96,6 +96,19 @@ MonoBehaviour:
   shootRate: 0.2
   bulletPrefab: {fileID: 3106444363597998397, guid: a028952a5f32cee4f8fa59700d532266, type: 3}
   bulletSpawnPos: {fileID: 3423135807279632616}
+--- !u!65 &3534148021017067158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980700097147831153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.6, z: 0.8}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &1183220420918782298
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb67861e83eeca946882ed829e2eb8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camOffset: {x: 0, y: 1.2, z: -2.6}
+  camOffsetTwo: {x: 0, y: 1, z: 0.5}
   sensX: 10
   sensY: 10
   minY: -90

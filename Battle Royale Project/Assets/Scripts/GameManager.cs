@@ -8,13 +8,14 @@ using System.Linq;
 public class GameManager : MonoBehaviourPun
 {
     [Header("Players")]
-    public string playerPrefabLocation;
+    private string playerPrefabLocation;
     public PlayerController[] players;
     public Transform[] spawnPoints;
     public int alivePlayers;
     public float postGameTime;
 
     private int playersInGame;
+    private bool skinLook;
 
     // instance
     public static GameManager instance;
@@ -44,10 +45,20 @@ public class GameManager : MonoBehaviourPun
     [PunRPC]
     void SpawnPlayer()
     {
+        if (skinLook){
+            playerPrefabLocation = "RedPlayer";
+        }
+        else
+        {
+            playerPrefabLocation = "BluePlayer";
+        }
+
         GameObject playerObj = PhotonNetwork.Instantiate(playerPrefabLocation, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+        skinLook = !skinLook;
 
         // initialize the player for all other players
         playerObj.GetComponent<PlayerController>().photonView.RPC("Initialize", RpcTarget.All, PhotonNetwork.LocalPlayer);
+        
     }
 
     public PlayerController GetPlayer (int playerId)
