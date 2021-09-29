@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviourPun
     public float postGameTime;
 
     private int playersInGame;
-    private bool skinLook;
+    private bool skinLook = true;
 
     // instance
     public static GameManager instance;
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviourPun
     {
         if (skinLook){
             playerPrefabLocation = "RedPlayer";
+            skinLook = !skinLook;
         }
         else
         {
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviourPun
         }
 
         GameObject playerObj = PhotonNetwork.Instantiate(playerPrefabLocation, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
-        skinLook = !skinLook;
+        
 
         // initialize the player for all other players
         playerObj.GetComponent<PlayerController>().photonView.RPC("Initialize", RpcTarget.All, PhotonNetwork.LocalPlayer);
