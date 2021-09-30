@@ -45,9 +45,12 @@ public class GameManager : MonoBehaviourPun
     [PunRPC]
     void SpawnPlayer()
     {
-        for (int s=1; s<12; s++)
+        for (int s=0; s<GameManager.instance.players.Length; s++)
         {
-            skinLook = false;
+            if (s % 2 == 0)
+                skinLook = false;
+            else
+                skinLook = true;
         }
         if (skinLook) 
         {
