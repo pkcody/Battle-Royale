@@ -2947,6 +2947,12 @@ MonoBehaviour:
   - {fileID: 1405278437}
   - {fileID: 1619909311}
   - {fileID: 929637444}
+  - {fileID: 1586374085}
+  - {fileID: 1350532966}
+  - {fileID: 1718992541}
+  - {fileID: 373860687}
+  - {fileID: 532726143}
+  - {fileID: 1296733393}
   alivePlayers: 0
   postGameTime: 5
 --- !u!4 &278090058

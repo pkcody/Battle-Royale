@@ -42,28 +42,30 @@ public class CameraController : MonoBehaviour
         //clamp the vertical rotation
         rotY = Mathf.Clamp(rotY, minY, maxY);
 
-        // first or third perspective
-        if (Input.GetKeyDown(KeyCode.F))
+        if (!isSpectator)
         {
+            // first or third perspective
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (camMode == 1)
+                {
+                    camMode = 0;
+                }
+                else
+                {
+                    camMode += 1;
+                }
+            }
+            if (camMode == 0)
+            {
+                this.transform.position = target.TransformPoint(camOffset);
+                this.transform.LookAt(target);
+            }
             if (camMode == 1)
             {
-                camMode = 0;
-            }
-            else
-            {
-                camMode += 1;
+                this.transform.position = target.TransformPoint(camOffsetTwo);
             }
         }
-        if (camMode == 0)
-        {
-            this.transform.position = target.TransformPoint(camOffset);
-            this.transform.LookAt(target);
-        }
-        if (camMode == 1)
-        {
-            this.transform.position = target.TransformPoint(camOffsetTwo);
-        }
-
         // are we spectating?
         if (isSpectator)
         {
