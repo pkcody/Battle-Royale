@@ -16,6 +16,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &7844371349525493116
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980700097147831153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &1211750339155125749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,20 +110,6 @@ MonoBehaviour:
   shootRate: 0.2
   bulletPrefab: {fileID: 3106444363597998397, guid: a028952a5f32cee4f8fa59700d532266, type: 3}
   bulletSpawnPos: {fileID: 3423135807279632616}
---- !u!136 &7844371349525493116
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980700097147831153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 0.1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!1 &1183220420918782298
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 6671406151771619854}
   - component: {fileID: 2969917419328977069}
   - component: {fileID: 2880222602425031089}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3423135807279632616}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4483791538083416216}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 762176712871036}
   - component: {fileID: 4287880643815122493}
   - component: {fileID: 2333197286167846669}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 999151411179104049}
   - component: {fileID: 3896096834194805546}
   - component: {fileID: 4944441893756569785}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11ad3b80101ca664da5e4331be8d5617, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11ad3b80101ca664da5e4331be8d5617, type: 3}
       propertyPath: m_TagString

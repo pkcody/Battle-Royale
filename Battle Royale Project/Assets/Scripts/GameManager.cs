@@ -45,9 +45,13 @@ public class GameManager : MonoBehaviourPun
     [PunRPC]
     void SpawnPlayer()
     {
-        if (skinLook){
-            playerPrefabLocation = "RedPlayer";
-            skinLook = !skinLook;
+        for (int s=1; s<12; s++)
+        {
+            skinLook = false;
+        }
+        if (skinLook) 
+        {
+            playerPrefabLocation = "RedPlayer";  
         }
         else
         {
